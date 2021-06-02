@@ -1,0 +1,460 @@
+.feed-page
+   height: 100vh
+   height: calc(var(--vh, 1vh) * 100)
+
+.header
+   .header__container
+      width: 80%
+      margin: 0 auto
+      position: relative
+
+.header__top
+   display: flex
+   justify-content: space-between
+   align-items: center
+   margin: 25px 0
+
+   .header__content
+      display: flex
+      align-items: center
+
+      .header__content-account
+         display: flex
+         align-items: center
+
+/* Dropdown header button */
+.header__content-dropdown
+   display: inline-block
+   position: relative
+
+   .header__content-dd-button
+      cursor: pointer
+      display: flex
+      align-items: center
+
+      .header__content-name
+         font-size: calc(14px + 2 * ((100vw - 320px) / (1440 - 320)))
+         color: $font-color-dark-2
+
+      .header__content-avatar
+         margin: 0 20px
+
+   .header__content-dd-input
+      display: none
+
+   .header__content-dd-menu
+      position: absolute
+      padding: 20px 25px
+      background-color: $color-white
+      list-style-type: none
+      z-index: 1
+      @include box-shadow
+
+   .header__content-dd-input + .header__content-dd-menu
+      display: none
+
+   .header__content-dd-input:checked + .header__content-dd-menu
+      display: block
+
+   .header__content-dd-menu .header__content-list-item
+      padding: 8px 0
+      cursor: pointer
+      white-space: nowrap
+      font-size: calc(13px + 3 * ((100vw - 320px) / (1440 - 320)))
+
+.header__content-socials
+   margin-left: 30px
+
+   .notify-icon-svg,
+   .gift-icon-svg,
+   .medium-icon-svg 
+      width: 40px
+      height: auto
+
+.header__down
+   display: flex
+   justify-content: space-between
+
+   .header__tabs
+      .header__tab-btn
+         display: inline-block
+         background: none
+         font-size: calc(12px + 2 * ((100vw - 320px) / (1440 - 320)))
+         font-weight: 600
+         text-transform: uppercase
+         color: $color-grey
+         margin-right: 40px
+         padding-bottom: 25px
+         border-bottom: 4px solid transparent
+
+         &:hover, &.active
+            color: $font-color-dark-1
+            border-image: linear-gradient(#FF974F 0%, #E32C75 100%)
+            border-image-slice: 1
+            @include transition
+
+.header__btn-plus
+   height: 65px
+   width: 65px
+   display: flex
+   justify-content: center
+   align-items: center
+   background: linear-gradient(135deg, #FF974F 0%, #E32C75 100%)
+   border-radius: 100%
+   position: absolute
+   right: 0
+   bottom: -65%
+   transform: translateY(-65%)
+
+.main
+   padding-top: 65px
+   @include box-shadow-inset
+
+.main__container
+   width: 80%
+   margin: 0 auto
+   display: flex
+   justify-content: space-between
+
+.account
+   width: 30%
+
+.account__profile
+   display: flex
+   justify-content: space-between
+
+   .account__profile-avatar
+      margin-right: 25px
+
+   .account__profile-info
+      .account__profile-name
+         font-size: calc(18px + 6 * ((100vw - 320px) / (1440 - 320)))
+         font-family: 'Montserrat', sans-serif
+         font-weight: 600
+         color: $font-color-dark-2
+         line-height: 1.2
+         margin-bottom: 8px
+         padding-right: 15px
+
+      .account__profile-nickname
+         display: block
+         font-size: calc(12px + 4 * ((100vw - 320px) / (1440 - 320)))
+         font-family: 'Montserrat', sans-serif
+         font-weight: 400
+         color: $font-color-dark-2
+         margin-bottom: 15px
+
+/* Account profile DROPDOWN button*/
+
+.account__profile-dropdown
+   display: inline-block
+   position: relative
+   height: fit-content
+
+   .account__profile-dd-button
+      display: inline-block
+      cursor: pointer
+
+      &::after
+         content: '\2807'
+         font-size: 35px
+         display: block
+         margin-top: -10px
+
+   .account__profile-dd-input
+      display: none
+
+   .account__profile-dd-menu
+      position: absolute
+      padding: 25px 20px
+      margin-top: 20px
+      background-color: $color-white
+      list-style-type: none
+      @include box-shadow
+
+      .list-item__btn
+         display: flex
+         align-items: center
+
+      .list-item__text
+         display: inline-block
+         color: $font-color-dark-1
+         margin-left: 18px
+         font-weight: 600
+         font-size: calc(14px + 2 * ((100vw - 320px) / (1440 - 320)))
+
+   .account__profile-dd-input + .account__profile-dd-menu
+      display: none
+
+   .account__profile-dd-input:checked + .account__profile-dd-menu
+      display: block
+
+   .account__profile-dd-menu .account__profile-list-item
+      padding: 8px 0
+      cursor: pointer
+      white-space: nowrap
+
+.account__stats
+   display: flex
+   justify-content: space-between
+   margin: 25px 0
+   width: 80%
+
+   .account__stats-num
+      display: block
+      font-weight: 600
+      font-size: calc(13px + 5 * ((100vw - 320px) / (1440 - 320)))
+      color: $font-color-dark-2
+      text-align: center
+
+   .account__stats-name
+      display: block
+      font-size: calc(13px + 3 * ((100vw - 320px) / (1440 - 320)))
+      color: $font-color-dark-3
+      text-align: center
+
+.account__description
+   font-size: calc(13px + 3 * ((100vw - 320px) / (1440 - 320)))
+   margin: 0
+
+.main__content
+   display: flex
+   flex-direction: column
+   margin-left: 50px
+
+.main__privacy-switch
+   position: relative
+   display: inline-block
+   width: 40px
+   height: 24px
+   margin: 0 30px
+
+   .switch-input
+      opacity: 0
+      width: 0
+      height: 0
+
+      &:checked + .slider
+         background-color: $color-red
+
+      &:focus + .slider
+         box-shadow: 0 0 1px $color-red
+
+      &:checked + .slider:before
+         -webkit-transform: translateX(16px)
+         -ms-transform: translateX(16px)
+         transform: translateX(16px)
+
+   .slider
+      position: absolute
+      cursor: pointer
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-color: $color-grey
+      @include transition
+
+      &:before
+         position: absolute
+         content: ""
+         height: 18px
+         width: 18px
+         left: 3px
+         bottom: 3px
+         background-color: $color-white
+         @include transition
+
+.slider.round
+   border-radius: 24px
+
+.slider.round:before
+   border-radius: 50%
+
+.main__privacy-status
+   color: $font-color-dark-1
+   font-size: calc(14px + 2 * ((100vw - 320px) / (1440 - 320)))
+
+.main__blocks
+   display: grid
+   grid-template-columns: 1fr 1fr
+   grid-template-rows: 1fr 1fr
+   gap: 25px
+   margin-top: 65px
+   margin-bottom: 215px
+
+   .block
+      padding: 25px 20px
+      @include box-shadow
+
+      .block__share
+         font-size: calc(12px + 4 * ((100vw - 320px) / (1440 - 320)))
+         font-weight: 600
+         margin-bottom: 20px
+
+         .block__share-tag
+            background-color: $share-bg
+
+      .block__share--hidden
+         visibility: hidden
+
+      .block__text
+         font-family: 'Montserrat', sans-serif
+         font-size: calc(18px + 18 * ((100vw - 320px) / (1440 - 320)))
+         font-weight: 400
+         margin-bottom: 40px
+         color: $font-color-dark-1
+
+      .block__info
+         display: flex
+
+         .block__account-name
+            color: $font-color-dark-1
+            margin-right: auto
+            margin-left: 10px
+            font-size: calc(12px + 6 * ((100vw - 320px) / (1440 - 320)))
+            font-weight: 600
+
+         .block__stats
+            display: flex
+
+            .block__stats-like
+               margin-left: 15px
+
+            .block__stats-num
+               margin-left: 3px
+               font-size: calc(12px + 6 * ((100vw - 320px) / (1440 - 320)))
+               font-weight: 600
+               color: $font-color-dark-1
+
+//MEDIA QUERIES  
+@media (min-width: 1920px)
+   .main__container,
+   .header .header__container
+      width: 70%
+
+   .main__blocks .block
+      padding: 35px 30px
+
+   .account
+      width: 80%
+
+   .logo-img
+      width: 80px
+      height: auto
+      
+//@media (min-width: 1399px)
+
+@media (max-width: 1199px)
+   .main__container,
+   .header .header__container
+      width: 90%
+
+   .main__blocks
+      gap: 15px
+      margin-top: 35px
+      margin-bottom: 180px
+
+@media (max-width: 1024px)
+   .main__container
+      flex-direction: column
+
+   .account
+      width: 60%
+      margin: 0 auto
+
+   .account__stats
+      width: 100%
+      justify-content: space-around
+
+   .main__privacy
+      margin: 0 auto
+      margin-top: 35px
+
+   .main__content
+      margin-left: 0
+
+@media (max-width: 768px)
+   .header__top
+      margin: 15px 0
+
+   .header__content-dropdown
+      .header__content-dd-button
+         .header__content-avatar
+            margin: 0 15px
+
+   .header__content-socials
+      margin-left: 10px
+
+   .header__down
+      .header__tabs
+         .header__tab-btn
+            margin-right: 20px
+            padding-bottom: 15px
+
+   .main__blocks
+      margin-bottom: 65px
+
+@media (max-width: 690px)
+   .account
+      width: 75%
+
+   .main__blocks
+      grid-template-columns: 1fr
+      grid-template-rows: 1fr
+
+   .header__btn-plus
+      height: 50px
+      width: 50px
+
+   .account__profile-dropdown
+      .account__profile-dd-menu
+         left: -75px
+         padding: 15px 10px
+         margin-top: 0
+
+@media (max-width: 425px)
+   .main__container,
+   .header .header__container,
+   .account
+      width: 90%
+
+   .header__content-dropdown
+      .header__content-dd-button
+         .header__content-name
+            display: none
+
+   .header__btn-plus
+      height: 40px
+      width: 40px
+
+   .account__profile
+      .account__profile-avatar
+         .avatar
+            width: 100%
+            height: auto
+
+   .account__profile-dropdown
+      .account__profile-dd-menu
+         left: -120px
+
+         .list-item__text
+            margin-left: 5px
+
+   .main
+      padding-top: 35px
+
+   .main__privacy
+      margin-top: 20px
+
+   .account__stats
+      margin: 20px 0
+
+   .main__blocks
+      margin-top: 15px
+      margin-bottom: 35px
+
+//@media (max-width: 374px)
+
+// mobile & tablet landscape orientation
+//@media screen and (min-width: 320px) and (max-width: 991px) and (orientation: landscape)
